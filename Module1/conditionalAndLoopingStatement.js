@@ -303,13 +303,93 @@ let statementFour = 10 != "5"
 // }
 
 // case : membuat pohon natal
-let rows = 6
+// let rows = 6
 
-for (let i = 1; i <= rows; i++) {
-    let stars = ""
-    for (let j = 1; j <= i; j++) {
-        stars += "*"
-    }
-    console.log(stars)
-}
+// for (let i = 1; i <= rows; i++) {
+//     let stars = ""
+//     for (let j = 1; j <= i; j++) {
+//         stars += "*"
+//     }
+//     console.log(stars)
+// }
 
+// -- while statement
+// case 1 : mengisi bensin
+// let fuelLevel = 0;
+// let tankCapacity = 50;
+
+// while (fuelLevel < tankCapacity) {
+//     console.log("Mengisi bensin ... Level saat ini : ", fuelLevel)
+//     fuelLevel += 10; // menambah bensin 10 liter
+// }
+// console.log("Tangki sudah penuh")
+
+// case 2 : menghitung tabungan hingga mencapai target
+// use case -> kita setor sebesar 5000 setiap minggunya
+// let target = 50000
+// let savings = 0
+// let week = 1
+
+// while (savings < target) {
+
+//     console.log(`Minggu ${week} : menabung Rp5000`)
+//     savings += 5000;
+//     week++
+// }
+
+// console.log(`Total tabungan terkumpul : Rp${savings}`)
+
+
+// -- do while statement
+// case 1 : mencicipin makanan di restoran
+// let liked = false; // apakah makanan cocok atau tidak
+// let attempts = 0;
+
+// do {
+//     attempts++;
+//     console.log(`Mencicipi makanan ke-${attempts}`)
+//     liked = Math.random() > 0.7; // 30% kemungkinan suka
+// } while (!liked)
+
+// console.log(`Makanan cocok ditemukan setelah ${attempts} kali mencoba`)
+
+// case 2 : menghitung lemparan koin
+let coin; // menyimpan hasil lemparan koin
+let outcomes = ["Kepala", "Buntut"]; // kemungkinan hasil yang ditemukan
+let attempts = 0; // menentukan sudah berapa kali melempar
+let wasFind = false
+
+// -- cara pertama
+// do {
+//     coin = outcomes[Math.floor(Math.random() * outcomes.length)]
+//     attempts++;
+//     console.log(`Percobaan ke-${attempts} : menampilkan koin ${coin}`)
+// } while (coin !== "Kepala")
+
+// console.log(`Membutuhkan ${attempts} kali percobaan`)
+
+// -- cara ariq
+// do {
+//     numbers = Math.random() * 10;
+//     numbers = Math.floor(numbers)
+//     if (numbers < 5) {
+//       side = outcomes[0];
+//       wasFind = false;
+//     } else {
+//       side = outcomes[1];
+//       wasFind = true
+//     }
+//     attempts++;
+//     console.log("percobaan ke -", attempts, "menampilkan :", side);
+//   } while (wasFind);
+//   console.log("sisi kepala sudah muncul setelah", attempts, " kali percobaan");
+
+// -- cara emil (belum fixed)
+// do{
+//     attempts++
+//     console.log(`Lemparan koin ke ${attempts}`)
+//     coin = Math.random() > 0.5
+//     
+// }while(coin)
+
+// console.log(`sisi kepala muncul setelah ${attempts} kali mencoba`)
