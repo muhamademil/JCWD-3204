@@ -322,3 +322,25 @@ let smartphone = {
 
 let clonedSmartphone = { ...smartphone }
 // console.log("result of cloned smartphone : ", clonedSmartphone)
+
+// -- Object method built-in
+
+// -- Object.assign
+let source = { a: 1, b: 2, c: 3, d: 4 }
+let target = { a: 3, b: 4, d: 5, f: 1 }
+let returnedTarget = Object.assign(target, source)
+// console.log("result of returned target : ", returnedTarget)
+
+// -- Object.freeze
+let laptop = {
+    type: "macbook pro",
+    year: 2019
+}
+
+// Object.freeze(laptop) // -> untuk mengunci object supaya tidak bisa ditambahkan/dihapus propertinya
+laptop.year = 2020
+// console.log("result after freezed : ", laptop) // -> akan muncul error ketika kita paksa untuk mengedit properti "year"
+
+// -- Object.entries
+let keyOfLaptop = Object.entries(laptop)
+// console.log("key of laptop : ", keyOfLaptop)
