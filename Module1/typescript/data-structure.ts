@@ -313,5 +313,42 @@ const workShift = new CircularLinkedList()
 workShift.insert("Shift Pagi")
 workShift.insert("Shift Siang")
 workShift.insert("Shift Malam")
+// console.log(workShift)
 
-console.log(workShift)
+// --- Circular Double Linked List
+class DoubleCircularNode {
+    value: string;
+    id: string;
+    next: DoubleCircularNode | null = null;
+    prev: DoubleCircularNode | null = null;
+
+    constructor(id: string, value: string) {
+        this.value = value;
+        this.id = id
+    }
+}
+
+class DoubleCircularLinkedList {
+    head: DoubleCircularNode | null = null;
+
+    insert(id: string, value: string) {
+        const newNode = new DoubleCircularNode(id, value)
+        if (!this.head) {
+            this.head = newNode;
+            this.head.next = this.head;
+            this.head.prev = this.head;
+        } else {
+            let last = this.head.prev!;
+            last.next = newNode;
+            newNode.prev = last;
+            newNode.next = this.head;
+            this.head.prev = newNode
+        }
+    }
+}
+
+// warehouse management
+let warehouse = new DoubleCircularLinkedList()
+warehouse.insert("001", "Electronic")
+warehouse.insert("002", "Sparepart Mio Karbu")
+warehouse.insert("003", "Fashion")
