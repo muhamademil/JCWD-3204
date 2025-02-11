@@ -46,7 +46,7 @@ class WareHouse {
     }
 
     getProduct(id: number): MainProduct | undefined {
-        return this.products.find((value: any) => value.id === id)
+        return this.products.find((value) => value.id === id)
     }
 
     updateProduct(id: number, quantity: number): void {
@@ -57,7 +57,7 @@ class WareHouse {
     }
 
     deleteProduct(id: number): void {
-        this.products = this.products.filter((value: any) => value.id !== id)
+        this.products = this.products.filter((value) => value.id !== id)
     }
 
     listProduct(): MainProduct[] {
