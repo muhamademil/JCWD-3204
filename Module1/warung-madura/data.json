@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "title": "Minyak Goreng 1L",
+      "image": "minyak-goreng.jpg",
+      "price": 22000,
+      "category": "Bahan Pokok"
+    },
+    {
+      "id": 2,
+      "title": "Sabun Mandi 90gr",
+      "image": "sabun-mandi.jpg",
+      "price": 8500,
+      "category": "Kebutuhan Rumah Tangga"
+    },
+    {
+      "id": 3,
+      "title": "Mie Instan Ayam Bawang",
+      "image": "mie-instan.jpg",
+      "price": 3500,
+      "category": "Makanan Instan"
+    },
+    {
+      "id": 4,
+      "title": "Beras Premium 5Kg",
+      "image": "beras-premium.jpg",
+      "price": 65000,
+      "category": "Bahan Pokok"
+    },
+    {
+      "id": 5,
+      "title": "Gula Pasir 1Kg",
+      "image": "gula-pasir.jpg",
+      "price": 14000,
+      "category": "Bahan Pokok"
+    },
+    {
+      "id": 6,
+      "title": "Teh Celup 25 Sachet",
+      "image": "teh-celup.jpg",
+      "price": 12000,
+      "category": "Minuman"
+    },
+    {
+      "id": 7,
+      "title": "Kopi Bubuk 200gr",
+      "image": "kopi-bubuk.jpg",
+      "price": 18000,
+      "category": "Minuman"
+    },
+    {
+      "id": 8,
+      "title": "Susu UHT 1L",
+      "image": "susu-uht.jpg",
+      "price": 25000,
+      "category": "Minuman"
+    },
+    {
+      "id": 9,
+      "title": "Telur Ayam 1Kg",
+      "image": "telur-ayam.jpg",
+      "price": 27000,
+      "category": "Bahan Pokok"
+    },
+    {
+      "id": 10,
+      "title": "Deterjen Bubuk 800gr",
+      "image": "deterjen-bubuk.jpg",
+      "price": 18000,
+      "category": "Kebutuhan Rumah Tangga"
+    }
+  ]
+  
