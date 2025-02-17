@@ -1,0 +1,58 @@
+.external-content {
+    background-color: blue;
+    background: linear-gradient(rgb(30, 10, 176), rgb(255, 238, 0));
+    color: #eb9422
+}
+
+.bg-image-container-internet {
+    background-image: url("https://i.pinimg.com/736x/eb/22/10/eb221043823c155e62ec7aaad5eb9844.jpg");
+    background-size: cover;
+    width: 800px;
+    height: 800px;
+}
+
+.bg-image-container-local {
+    background-image: url("../assets/gambar-kucing-3.jpg");
+    background-size: cover;
+    width: 800px;
+    height: 800px;
+}
+
+.pp-container {
+    background-color: brown;
+    height: 200px;
+    color: red;
+}
+
+.pp-container .content-with-pixel {
+    width: 800px;
+    height: fit-content;
+    background-color: yellow;
+}
+
+.pp-container .content-with-percentage {
+    width: 75%;
+    height: fit-content;
+    background-color: white;
+}
+
+.square-container {
+    height: 300px;
+    width: fit-content;
+    background-color: yellow;
+    padding: 10px 20px 30px 40px;
+    margin: 10px 20px 30px 40px;
+    /* margin dan padding disusun clock-wise */
+}
+
+.square-content-1 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.square-content-2 {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
