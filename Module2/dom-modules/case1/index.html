@@ -1,0 +1,75 @@
+<!-- Mengubah isi teks atau elemen HTML menggunakan DOM javascript -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Inner HTML</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        margin-top: 50px;
+        position: relative;
+        height: 100vh
+    }
+
+    .random-btn {
+        position: absolute;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: tomato;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s
+    }
+</style>
+
+<body>
+    <h1 id="title">Hello World</h1>
+    <button onclick="changeText()">Click Me!</button>
+    <button id="random-btn" class="random-btn" onclick="movingButton()">Tangkap Aku</button>
+</body>
+<script>
+    let isDefaultText = true; // flag untuk mengecek status teks
+
+    // fungsi untuk mengubah teks
+    function changeText() {
+        if (isDefaultText) {
+            document.getElementById("title").innerHTML = "Text Changed"
+        } else {
+            document.getElementById("title").innerHTML = "Hello World"
+        }
+        isDefaultText = !isDefaultText // untuk trigger flag variabel
+    }
+
+    // fungsi untuk memindahkan button secara acak
+    function movingButton() {
+        alert('Eitsss gak kenaaa')
+
+        // untuk mengambil ukuran layar device kita
+        let widthScreen = window.innerWidth
+        let heightScreen = window.innerHeight
+
+        // untuk mengambil elemen button
+        let button = document.getElementById("random-btn")
+        let widthButton = button.offsetWidth;
+        let heightButton = button.offsetHeight;
+
+        // menentukan posisi random
+        let positionX = Math.random() * (widthScreen - widthButton)
+        let positionY = Math.random() * (heightScreen - heightButton)
+
+        // menetapkan posisi baru ke button
+        button.style.left = positionX + "px"
+        // button.style.right = positionY + "px"
+        button.style.top = positionY + "px"
+        // button.style.bottom = positionY + "px"
+    }
+</script>
+
+</html>

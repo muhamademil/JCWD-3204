@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>CRUD Warehouse Inventory</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- form untuk menambahkan barang -->
+        <form id="warehouseForm">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <input type="text" id="itemQuantity" placeholder="Item Quantity">
+            <input type="text" id="itemCategory" placeholder="Item Category">
+            <button type="submit">Add Item</button>
+        </form>
+
+        <!-- tabel untuk menampilkan daftar barang -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <!-- daftar barang ada disini -->
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>

@@ -1,0 +1,32 @@
+<!-- Mengubah background color menggunakan DOM javascript -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn" onclick="changeMode()">Change Mode</button>
+</body>
+<script>
+    let isDarkMode = true
+    function changeMode() {
+        if (isDarkMode) {
+            document.body.style.backgroundColor = "black"
+            document.getElementById("btn").style.backgroundColor = "white"
+            document.getElementById("btn").style.color = "black"
+        } else {
+            document.body.style.backgroundColor = "white"
+            document.getElementById("btn").style.backgroundColor = "black"
+            document.getElementById("btn").style.color = "white"
+        }
+        isDarkMode = !isDarkMode
+    }
+</script>
+
+</html>

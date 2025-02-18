@@ -1,0 +1,30 @@
+<!-- Menambahkan paragraf baru ke dalam div -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button onclick="addParagraph()">Add Paragraph</button>
+    <button onclick="deleteParagraph()">Remove Paragraph</button>
+</body>
+<script>
+    function addParagraph() {
+        let newParagraph = document.createElement("p")
+        newParagraph.innerHTML = "Paragraf baru ditambahkan"
+        document.getElementById("container").appendChild(newParagraph)
+    }
+
+    function deleteParagraph() {
+        let item = document.getElementById("container")
+        item.parentNode.removeChild(item)
+    }
+</script>
+
+</html>
