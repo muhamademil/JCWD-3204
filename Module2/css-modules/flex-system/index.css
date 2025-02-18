@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+    background: lightgrey;
+    padding: 10px;
+    /* flex bisa diatur horizontal maupun vertikal */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flex-item {
+    background: darkblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

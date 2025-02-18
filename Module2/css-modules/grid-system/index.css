@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+
+    /* untuk mencoba template-row, ubah colomnya jadi 4 */
+    /* grid-template-rows: 100px 200px 300px 400px; */
+    gap: 10px;
+    background-color: yellow;
+}
+
+.grid-item {
+    background: lightblue;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc
+}
+
+.chessboard {
+    display: grid;
+    width: fit-content;
+    grid-template-rows: repeat(4, 1fr);
+    border: 0.5px solid black;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+}
+
+.square:nth-child(odd) {
+    background-color: white;
+}
+
+.square:nth-child(even) {
+    background-color: black;
+}
+
+/* untuk tampilan tablet */
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-rows: 100px 200px 300px; */
+        gap: 10px;
+    }
+
+}
+
+/* untuk tampilan mobile */
+@media (max-width: 486px) {
+    .grid-container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: 100px 200px 300px; */
+        gap: 10px;
+    }
+}

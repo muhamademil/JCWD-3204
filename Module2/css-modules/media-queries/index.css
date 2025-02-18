@@ -1,0 +1,71 @@
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.responsive-box {
+    width: 100%;
+    padding: 15px;
+    background: rgb(0, 162, 255);
+    color: white;
+    text-align: center;
+}
+
+.lorem-content {
+    border: 1;
+    background-color: darkorange;
+    color: white;
+    text-align: justify
+}
+
+.color-box {
+    width: 100%;
+    padding: 20px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+}
+
+/* media query untuk tablet */
+
+@media (max-width: 768px) {
+    .responsive-box {
+        background-color: green;
+        width: 70%
+    }
+
+    .color-box {
+        background-color: yellow;
+        color: black;
+        text-align: left;
+    }
+
+    .lorem-content {
+        border: 1;
+        background-color: darkorange;
+        color: white;
+        text-align: center
+    }
+}
+
+/* media query untuk mobile */
+@media (max-width: 480px) {
+    .responsive-box {
+        width: 50%;
+        background-color: red;
+        font-size: 14px;
+    }
+
+    .color-box {
+        background-color: aquamarine;
+        color: red;
+        text-align: right;
+    }
+
+    .lorem-content {
+        border: 1;
+        background-color: darkorange;
+        color: white;
+        text-align: left
+    }
+}
