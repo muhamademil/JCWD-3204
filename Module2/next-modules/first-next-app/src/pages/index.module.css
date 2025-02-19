@@ -1,0 +1,42 @@
+.mainContainer {
+    text-align: center;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: yellow;
+}
+
+.containerButton {
+    display: flex;
+    gap: 10px;
+}
+
+.stepButton {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer
+}
+
+.lampButton {
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer
+}
+
+.drawButton {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer  
+}
