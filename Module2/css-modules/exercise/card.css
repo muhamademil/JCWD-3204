@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fraunces';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2ebe2;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-content h4 {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: 'Montserrat';
+}
+
+.card-content h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    font-family: 'Montserrat';
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2f6627
+}
+
+.old-price {
+    font-size: 16px;
+    color: #888;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.button {
+    background-color: #4a7c59;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.button:hover {
+    background-color: #3a6c49;
+}
+
+.button svg {
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: 420px;
+    }
+}
