@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styles from './index.module.css'
-import TestComponent, { IPerson } from '@/components/test/TestComponent'
 
 export default function Home() {
   const [steps, setStep] = useState<number>(0)
@@ -54,25 +53,6 @@ export default function Home() {
     }
   }
 
-  const user: IPerson[] = [
-    {
-      name: "Agus",
-      age: 23
-    },
-    {
-      name: "Fajri",
-      age: 10
-    },
-    {
-      name: "Azmi",
-      age: 17
-    },
-    {
-      name: "Emil",
-      age: 30
-    }
-  ]
-
   return (
     <div className={styles.mainContainer}>
       <div className={styles.subContainer}>
@@ -93,19 +73,6 @@ export default function Home() {
         <h3>Kamu dapat nomor undian : {number}</h3>
         <h4>Hadiah yang kamu dapat kan adalah : {prize}</h4>
         <button className={styles.drawButton} onClick={drawNumber}>Click</button>
-      </div>
-      <div className={styles.subContainer}>
-        <h3> --- Contoh props untuk Test Component --- </h3>
-        {
-          user.map((item: IPerson) => {
-            return (
-              <TestComponent
-                name={item.name}
-                age={item.age}
-              />
-            )
-          })
-        }
       </div>
     </div>
   )
