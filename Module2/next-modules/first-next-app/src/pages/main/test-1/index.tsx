@@ -1,6 +1,6 @@
 import React from 'react'
 import Card, { ICard } from '@/components/card/card.module'
-import { data } from '@/dummy/dummyHijab'
+import { data } from '@/dummy/dummyVegetable'
 
 export default function Test1() {
     return (
