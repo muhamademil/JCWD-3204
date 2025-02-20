@@ -9,7 +9,7 @@ export interface ICard {
 export default function Card({ id, title, description, image, price }: ICard) {
     return (
         <div id={id} className="bg-white shadow-md rounded-lg overflow-hidden">
-            <img className="rounded-md" src={image} />
+            <img className="rounded-md w-full h-60" src={image} />
             <div className="p-4">
                 <h2 className="text-lg font-bold">{title}</h2>
                 <p className="text-gray-600 text-sm">{description}</p>
