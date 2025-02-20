@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './index.module.css'
-import TestComponent, { IPerson } from '@/components/Test/TestComponent'
+import TestComponent, { IPerson } from '@/components/test/TestComponent'
 
 export default function Home() {
   const [steps, setStep] = useState<number>(0)
