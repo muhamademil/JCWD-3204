@@ -34,6 +34,8 @@ export default function Product() {
             }
         })
 
+    console.log('filtered : ', filteredProducts)
+
     return (
         <Layout>
             <div className='w-full h-full flex gap-x-5 p-5 bg-red-500 text-black'>
@@ -68,19 +70,23 @@ export default function Product() {
             </div>
             <div className='grid grid-cols-3 gap-5 p-5'>
                 {
-                    filteredProducts.map((item: DataProduct) => {
-                        return (
-                            <Card
-                                id={item.id}
-                                title={item.title}
-                                description={item.description}
-                                image={item.image}
-                                price={item.price}
-                                category={item.category}
-                                onClick={() => router.push(`product/${item.id}`)}
-                            />
-                        )
-                    })
+                    filteredProducts.length > 0 ?
+                        filteredProducts.map((item: DataProduct) => {
+                            return (
+                                <Card
+                                    id={item.id}
+                                    title={item.title}
+                                    description={item.description}
+                                    image={item.image}
+                                    price={item.price}
+                                    category={item.category}
+                                    onClick={() => router.push(`product/${item.id}`)}
+                                />
+                            )
+                        }) :
+                        <div className='w-screen h-screen flex justify-center items-center text-center'>
+                            <p className='text-lg font-semibold text-amber-700'>Produk yang anda cari tidak ditemukan</p>
+                        </div>
                 }
             </div>
         </Layout>
