@@ -1,5 +1,5 @@
 "use client"
-import Button from "../button/button.module"
+import Button from "@/components/atomics/button/button.module"
 import { useRouter } from "next/navigation"
 
 export default function Menu() {
