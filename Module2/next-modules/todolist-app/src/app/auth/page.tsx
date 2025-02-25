@@ -25,7 +25,10 @@ function Auth() {
                 icon: "success",
                 confirmButtonColor: "#3085d6"
             }).then(() => {
-                Cookies.set("email", email, { expires: 7 });
+                Cookies.set("type", "default")
+                Cookies.set("email", email, { expires: 7 }); // --> authentication menggunakan cookies
+                // sessionStorage.setItem("email", email) // --> authentication menggunakan session
+                // localStorage.setItem("email", email) // --> authentication menggunakan local storage
                 router.push("/");
             });
         } else {

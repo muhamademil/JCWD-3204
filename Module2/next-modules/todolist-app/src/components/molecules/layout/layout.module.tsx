@@ -16,7 +16,11 @@ export default function Layout({ children }: ILayout) {
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
     useEffect(() => {
-        const storedEmail = Cookies.get("email");
+
+        const storedEmail = Cookies.get("email"); // --> mengambil data 'email' menggunakan cookies
+        // const storedEmail = sessionStorage.getItem("email") // --> mengambil data 'email' menggunakan session
+        // const storedEmail = localStorage.getItem("email") // --> mengambil data 'email' menggunakan local storage
+
         if (!storedEmail) {
             router.push("/auth");
         } else {
