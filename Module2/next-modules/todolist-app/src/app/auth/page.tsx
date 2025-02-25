@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
+import Swal from "sweetalert2";
 
 function Auth() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const router = useRouter()
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -15,14 +16,25 @@ function Auth() {
         const data = {
             email: "bambang123@mail.com",
             password: "admin123"
-        }
+        };
 
         if (data.email === email && data.password === password) {
-            alert("Welcome to JCWD3204!")
-            Cookies.set('email', email, { expires: 7 })
-            router.push('/')
+            Swal.fire({
+                title: "Welcome!",
+                text: "Welcome to JCWD3204!",
+                icon: "success",
+                confirmButtonColor: "#3085d6"
+            }).then(() => {
+                Cookies.set("email", email, { expires: 7 });
+                router.push("/");
+            });
         } else {
-            alert("Please check your email and password again")
+            Swal.fire({
+                title: "Login Failed",
+                text: "Please check your email and password again",
+                icon: "error",
+                confirmButtonColor: "#d33"
+            });
         }
     };
 
@@ -78,6 +90,6 @@ function Auth() {
             </div>
         </div>
     );
-};
+}
 
 export default Auth;
