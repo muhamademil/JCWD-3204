@@ -5,7 +5,7 @@ import Layout from '@/components/molecules/layout/layout.module'
 export default function LandingPage() {
   return (
     <Layout>
-      <div className='w-screen h-screen'>
+      <div className=' flex justify-center items-center'>
         <Menu />
       </div>
     </Layout>

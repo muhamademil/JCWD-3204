@@ -6,8 +6,10 @@ import Layout from '@/components/molecules/layout/layout.module'
 export default function Effect() {
     return (
         <Layout>
-            <CountLayout />
-            <AddItemLayout />
+            <div className='flex flex-col justify-center items-center'>
+                <CountLayout />
+                <AddItemLayout />
+            </div>
         </Layout>
     )
 }

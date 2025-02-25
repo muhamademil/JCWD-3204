@@ -6,8 +6,10 @@ import ToggleLayout from '@/components/molecules/toggle-layout/toggle-layout.mod
 export default function State() {
     return (
         <Layout>
-            <CountLayout />
-            <ToggleLayout />
+            <div className='flex flex-col justify-center items-center'>
+                <CountLayout />
+                <ToggleLayout />
+            </div>
         </Layout>
     )
 }
