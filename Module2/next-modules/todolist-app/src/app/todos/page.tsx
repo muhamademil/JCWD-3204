@@ -6,9 +6,11 @@ import Layout from '@/components/molecules/layout/layout.module'
 export default function Todos() {
   return (
     <Layout>
-      <h1 className='text-2xl font-semibold text-center mb-4'>To Do List</h1>
-      <TodoForm />
-      <TodoList />
+      <div className='flex flex-col gap-y-5 text-black justify-center items-center'>
+        <h1 className='text-2xl font-semibold text-center mb-4'>To Do List</h1>
+        <TodoForm />
+        <TodoList />
+      </div>
     </Layout>
   )
 }
