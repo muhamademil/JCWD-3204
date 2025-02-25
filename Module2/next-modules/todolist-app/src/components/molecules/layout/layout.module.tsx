@@ -1,5 +1,7 @@
 "use client"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
+import { useRouter } from 'next/navigation'
+import Cookies from "js-cookie"
 import { ThemeContext } from "@/utils/context/themeContext"
 
 interface ILayout {
@@ -9,6 +11,18 @@ interface ILayout {
 export default function Layout({ children }: ILayout) {
 
     const { theme, toggleTheme } = useContext(ThemeContext)
+    const router = useRouter()
+
+    useEffect(() => {
+        const email = Cookies.get('email')
+        console.log('email ', email)
+        if (email === undefined) {
+            router.push('/auth')
+        } else {
+            return
+        }
+    }, [])
+
 
     return (
         <div className={`${theme === "light" ? 'bg-slate-100' : 'bg-slate-900'} w-screen h-full flex flex-col justify-center items-center`}>
