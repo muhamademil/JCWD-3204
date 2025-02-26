@@ -1,0 +1,59 @@
+[
+    {
+      "category": "Power Tools",
+      "name": "Bor Listrik",
+      "description": "Bor listrik dengan kecepatan variabel, cocok untuk pengeboran kayu, besi, dan beton.",
+      "imageUrl": "https://example.com/images/bor-listrik.jpg",
+      "price": 550000
+    },
+    {
+      "category": "Hand Tools",
+      "name": "Gergaji Tangan",
+      "description": "Gergaji tangan dengan mata pisau tajam untuk memotong kayu dan bahan lainnya.",
+      "imageUrl": "https://example.com/images/gergaji-tangan.jpg",
+      "price": 95000
+    },
+    {
+      "category": "Measuring Tools",
+      "name": "Meteran 5 Meter",
+      "description": "Meteran tarik sepanjang 5 meter dengan pengunci otomatis untuk pengukuran akurat.",
+      "imageUrl": "https://example.com/images/meteran-5m.jpg",
+      "price": 50000
+    },
+    {
+      "category": "Power Tools",
+      "name": "Gerinda Tangan",
+      "description": "Gerinda tangan serbaguna dengan kecepatan tinggi untuk pemotongan dan penghalusan material.",
+      "imageUrl": "https://example.com/images/gerinda-tangan.jpg",
+      "price": 600000
+    },
+    {
+      "category": "Safety Equipment",
+      "name": "Sarung Tangan Konstruksi",
+      "description": "Sarung tangan berbahan kulit sintetis untuk melindungi tangan dari benda tajam dan panas.",
+      "imageUrl": "https://example.com/images/sarung-tangan.jpg",
+      "price": 75000
+    },
+    {
+      "category": "Hand Tools",
+      "name": "Tang Kombinasi",
+      "description": "Tang kombinasi dengan pegangan ergonomis untuk menjepit, memotong, dan membengkokkan kabel atau logam.",
+      "imageUrl": "https://example.com/images/tang-kombinasi.jpg",
+      "price": 85000
+    },
+    {
+      "category": "Masonry Tools",
+      "name": "Sekop Semen",
+      "description": "Sekop semen berbahan baja tahan karat dengan gagang kayu untuk mencampur dan mengaplikasikan semen.",
+      "imageUrl": "https://example.com/images/sekop-semen.jpg",
+      "price": 110000
+    },
+    {
+      "category": "Measuring Tools",
+      "name": "Waterpass 60cm",
+      "description": "Waterpass aluminium sepanjang 60cm untuk memastikan bidang rata dan sejajar.",
+      "imageUrl": "https://example.com/images/waterpass-60cm.jpg",
+      "price": 130000
+    }
+  ]
+  
