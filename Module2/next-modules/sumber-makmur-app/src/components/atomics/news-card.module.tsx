@@ -7,7 +7,7 @@ export interface NewsArticle {
     urlToImage: string
     onClick: () => void
 }
-export default function Card({ author, title, description, urlToImage, onClick }: NewsArticle) {
+export default function NewsCard({ author, title, description, urlToImage, onClick }: NewsArticle) {
     return (
         <div
             onClick={onClick}
