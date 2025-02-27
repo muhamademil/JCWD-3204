@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 import { axiosInstance } from "@/utils/products.api";
 import Swal from "sweetalert2";
 
-export default function UserForm() {
+export default function RegisterForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter()
