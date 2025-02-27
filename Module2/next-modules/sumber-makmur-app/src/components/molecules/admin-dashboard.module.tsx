@@ -26,10 +26,70 @@ export default function AdminDashboard() {
         fetchProducts()
     }, [])
 
+    function ProductForm() {
+        return (
+            <Dialog.Root>
+                {/* Button untuk tambah produk */}
+                <Dialog.Trigger className='px-4 py-2 bg-blue-600 text-white rounded'>
+                    Tambah Produk
+                </Dialog.Trigger>
+
+                {/* Form untuk tambah/edit */}
+                <Dialog.Portal>
+                    <Dialog.Overlay className='fixed inset-0 bg-black opacity-30'>
+                        <Dialog.Content
+                            className='fixed bg-white p-6 rounded shadow-lg top-1/2 left-1/2 
+                        transform-translate-x-1/2 -translate-y-1/2 w-96'>
+                            <h2 className='text-xl font-bold mb-4'>{editProduct ? 'Edit Produk' : 'Tambah Produk'}</h2>
+                            <form action="">
+                                <div className='mt-4'>
+                                    <label>Nama Produk</label>
+                                    <input
+                                        type='text'
+                                        className='block w-full p-2 border rounded'
+                                        {...register('name')}
+                                    />
+                                    {
+                                        errors.name &&
+                                        <p className='text-red-500 mt-2'>{errors.name.message}</p>
+                                    }
+                                </div>
+                                <div className='mt-4'>
+                                    <label>Harga</label>
+                                    <input
+                                        type='number'
+                                        className='block w-full p-2 border rounded'
+                                        {...register('price')}
+                                    />
+                                    {
+                                        errors.price &&
+                                        <p className='text-red-500 mt-2'>{errors.price.message}</p>
+                                    }
+                                </div>
+                                <div className='mt-4'>
+                                    <label>Stock</label>
+                                    <input
+                                        type='number'
+                                        className='block w-full p-2 border rounded'
+                                        {...register('stock')}
+                                    />
+                                    {
+                                        errors.stock &&
+                                        <p className='text-red-500 mt-2'>{errors.stock.message}</p>
+                                    }
+                                </div>
+                            </form>
+                        </Dialog.Content>
+                    </Dialog.Overlay>
+                </Dialog.Portal>
+            </Dialog.Root>
+        )
+    }
+
     return (
         <div className='w-screen min-h-screen p-6 bg-gray-100'>
             <h1 className='text-2xl font-bold mb-4'>Sumber Makmur Dashboard</h1>
-            {/* Tempat untuk naruh popup CRUD */}
+            <ProductForm/>
             <table className='w-full mt-6 border'>
                 <thead>
                     <tr className='bg-gray-200 border'>
