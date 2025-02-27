@@ -13,13 +13,13 @@ export default function Navbar() {
         if (storedEmail !== undefined) {
             return
         } else {
-            router.push('/auth/register')
+            router.push('/auth/login')
         }
     }, [])
 
 
     return (
-        <div className={`${pathname === '/auth/register' ? 'hidden' : ' w-screen h-20 p-4 bg-orange-500 text-white flex justify-between items-center fixed top-0'}`}>
+        <div className={`${pathname === '/auth/register' && '/auth/login' ? 'hidden' : ' w-screen h-20 p-4 bg-orange-500 text-white flex justify-between items-center fixed top-0'}`}>
             <div className='text-lg font-semibold'>
                 <h2>Sumber Makmur</h2>
             </div>
