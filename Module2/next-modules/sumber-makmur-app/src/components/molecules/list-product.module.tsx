@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState, useMemo } from 'react'
-import { axiosInstance } from '@/utils/products.api'
+import { axiosInstance } from '@/utils/api/products.api'
 import Card, { ICard } from '@/components/atomics/card.module'
 
 export default function ListProduct() {
