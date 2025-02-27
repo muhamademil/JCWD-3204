@@ -1,15 +1,18 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Cookies from 'js-cookie'
 
 export default function Navbar() {
 
+    const [storedEmail, setStoredEmail] = useState<string | undefined>("")
     const router = useRouter()
     const pathname = usePathname()
-    const storedEmail = Cookies.get('email')
+
 
     useEffect(() => {
+        const emailCookie = Cookies.get("email")
+        setStoredEmail(emailCookie)
         if (storedEmail !== undefined) {
             return
         } else {
@@ -17,9 +20,12 @@ export default function Navbar() {
         }
     }, [])
 
+    if (pathname === '/auth/register' || pathname === '/auth/login') {
+        return null
+    }
 
     return (
-        <div className={`${pathname === '/auth/register' && '/auth/login' ? 'hidden' : ' w-screen h-20 p-4 bg-orange-500 text-white flex justify-between items-center fixed top-0'}`}>
+        <div className='w-screen h-20 p-4 bg-orange-500 text-white flex justify-between items-center fixed top-0'>
             <div className='text-lg font-semibold'>
                 <h2>Sumber Makmur</h2>
             </div>
