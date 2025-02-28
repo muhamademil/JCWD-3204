@@ -27,7 +27,8 @@ export async function GET() {
 // Handle POST Request -> untuk membuat data produk ke database sumber makmur
 export async function POST(req: Request) {
     try {
-        await axiosInstance.post('/products', req.body)
+        const body = await req.json()
+        await axiosInstance.post('/products', body)
         return NextResponse.json({
             status: 201,
             message: 'Success create data product'
