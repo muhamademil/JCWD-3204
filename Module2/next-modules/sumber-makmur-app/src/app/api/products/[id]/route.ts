@@ -9,13 +9,22 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     try {
         const { id } = await params
 
-        if (!id) {
-            return NextResponse.json({
-                status: 400,
-                message: "ID is required"
-            })
+        // --- validasi untuk mengecek apakah id yang diminta, terdaftar di dalam database
+        
+        // Fetch all products
+        const productId = await axiosInstance.get('/products');
+
+        // Cek apakah ID ada dalam daftar produk
+        const productExists = productId.data.some((product: { id: string }) => product.id === id);
+
+        if (!productExists) {
+            return NextResponse.json(
+                { status: 400, message: "Product ID not found" },
+                { status: 400 }
+            );
         }
 
+        // Kalau ID nya ada, lanjut tampilkan produk tersebut
         const response = await axiosInstance.get(`/products/${id}`)
         return NextResponse.json({
             status: 200,
