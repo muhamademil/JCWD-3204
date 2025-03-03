@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState, AppDispatch } from '@/utils/redux/store/store'
 import { increaseQuantity, decreaseQuantity, removeFromCart, fetchStock } from '@/utils/redux/cartSlice'
@@ -7,6 +7,7 @@ import { increaseQuantity, decreaseQuantity, removeFromCart, fetchStock } from '
 
 export default function Cart() {
 
+    const [totalAmount, setTotalAmount] = useState<number>()
     const dispatch = useDispatch<AppDispatch>()
     const cart = useSelector((state: RootState) => state.cart.items)
 
@@ -27,13 +28,13 @@ export default function Cart() {
                     <p className='text-xl text-orange-600 font-semibold'>Your cart is empty</p> :
                     <div className='space-y-5'>
                         {
-                            cart.map((item, key) => {
+                            cart.map((item: any, key) => {
                                 return (
                                     <div key={key} className='flex justify-between items-center border p-4 rounded'>
                                         <img src={item.image} alt={item.name} className='w-16 h-16 object-cover mr-4' />
                                         <div className='flex flex-col items-center mx-10'>
                                             <h3 className='text-lg font-bold'>{item.name}</h3>
-                                            <p>{item.price}</p>
+                                            <p>{item.price * (item.quantity)}</p>
                                         </div>
                                         <div className='flex items-center'>
                                             <button className='px-2' onClick={() => item.objectId && dispatch(decreaseQuantity(item.objectId))}>-</button>
@@ -44,6 +45,7 @@ export default function Cart() {
                                 )
                             })
                         }
+                        <h2 className='text-red-500 font-semibold'>Total Amount : </h2>
                     </div>
             }
         </div>
