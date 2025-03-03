@@ -34,7 +34,7 @@ const cartSlice = createSlice({
         addToCart(state, action: PayloadAction<CartItem>) {
             const existingItems = state.items.find((item: CartItem) => item.objectId === action.payload.objectId)
             if (existingItems) {
-                if (existingItems.quantity < existingItems.stock) {
+                if (existingItems.quantity && existingItems.quantity < existingItems.stock) {
                     existingItems.quantity += 1
                 }
             } else {
@@ -43,13 +43,13 @@ const cartSlice = createSlice({
         },
         increaseQuantity(state, action: PayloadAction<string>) {
             const item = state.items.find((item: CartItem) => item.objectId === action.payload)
-            if (item && item.quantity < item.stock) {
+            if (item?.quantity && item.quantity < item.stock) {
                 item.quantity += 1
             }
         },
         decreaseQuantity(state, action: PayloadAction<string>) {
             const item = state.items.find((item: CartItem) => item.objectId === action.payload)
-            if (item && item.quantity < item.stock) {
+            if (item?.quantity && item.quantity < item.stock) {
                 item.quantity -= 1
             } else {
                 state.items = state.items.filter((item: CartItem) => item.objectId !== action.payload)

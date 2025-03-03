@@ -17,6 +17,8 @@ export default function Cart() {
                 dispatch(fetchStock(item.objectId))
             }
         })
+        const total = cart.reduce((acc: any, item: any) => acc + item.price * item.quantity, 0)
+        setTotalAmount(total)
     }, [cart, dispatch])
 
 
@@ -45,7 +47,7 @@ export default function Cart() {
                                 )
                             })
                         }
-                        <h2 className='text-red-500 font-semibold'>Total Amount : </h2>
+                        <h2 className='text-red-500 font-semibold'>Total Amount : {totalAmount} </h2>
                     </div>
             }
         </div>
