@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/atomics/navbar.module";
+import ReduxProvider from "@/components/provider.module";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -21,10 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} antialiased bg-white text-black`}>
-        <Navbar/>
-        {children}
-      </body>
+      <ReduxProvider>
+        <body className={`${montserrat.variable} antialiased bg-white text-black`}>
+          <Navbar />
+          {children}
+        </body>
+      </ReduxProvider>
+
     </html>
   );
 }
