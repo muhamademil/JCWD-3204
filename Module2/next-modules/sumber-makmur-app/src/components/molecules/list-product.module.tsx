@@ -1,7 +1,10 @@
 "use client"
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import { axiosInstance } from '@/utils/api/products.api'
 import Card, { ICard } from '@/components/atomics/card.module'
+
+import { addToCart } from '@/utils/redux/cartSlice'
+import { useDispatch } from 'react-redux'
 
 export default function ListProduct() {
     const [product, setProduct] = useState<ICard[]>([])
@@ -11,6 +14,8 @@ export default function ListProduct() {
 
     const [filteredProducts, setFilteredProduct] = useState<ICard[]>([])
     const [categories, setCategories] = useState<string[]>([])
+
+    const dispatch = useDispatch()
 
     async function getAllProducts() {
         setIsLoading(true)
@@ -89,7 +94,7 @@ export default function ListProduct() {
                     <div className='grid grid-cols-3 justify-center items-center w-full h-full gap-4'>
                         {
                             filteredProducts.length > 0 ? (
-                                filteredProducts.map((item: ICard, key: number) => (
+                                filteredProducts.map((item: any, key: number) => (
                                     <Card
                                         key={key}
                                         name={item?.name}
@@ -97,6 +102,8 @@ export default function ListProduct() {
                                         description={item?.description}
                                         imageUrl={item?.imageUrl}
                                         price={item?.price}
+                                        stock={item?.stock}
+                                        onClick={() => dispatch(addToCart(item))}
                                     />
                                 ))
                             ) : (

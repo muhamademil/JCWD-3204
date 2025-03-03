@@ -2,11 +2,11 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { axiosInstance } from '../api/products.api';
 
 interface CartItem {
-    objectId: string;
+    objectId?: string;
     name: string;
     price: number;
-    image: string;
-    quantity: number;
+    image?: string;
+    quantity?: number;
     stock: number;
 }
 
