@@ -13,7 +13,7 @@ export class EmployeeService {
     if (search) {
       where.name = {
         contains: search,
-        mode: "insesntive",
+        mode: "insesntive", //insentive akan pengaruh ke search lowercase/uppercase
       };
     }
 
