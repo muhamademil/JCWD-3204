@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { AttendanceController } from "../controllers/attendance.controller";
+import { AuthenticationMiddleware } from "../middlewares/authentication.middleware";
+import { AuthorizationMiddleware } from "../middlewares/authorization.middleware";
 
 export class AttendanceRouter {
   public router: Router;
@@ -14,6 +16,8 @@ export class AttendanceRouter {
   private routes(): void {
     this.router.post(
       "/attendances/clock_in",
+      AuthorizationMiddleware.verifyToken,
+      AuthorizationMiddleware.allowRoles("EMPLOYEE"),
       this.attendanceController.clockIn.bind(this.attendanceController)
     );
     this.router.put(
