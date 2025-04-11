@@ -1,5 +1,6 @@
-import { AttendanceQuery, ClockInput } from "../models/interface";
 import { prisma } from "../prisma/client";
+import { AttendanceQuery, ClockInput } from "../models/interface";
+// import { toGMT7 } from "../lib/time.config";
 
 export class AttendanceService {
   public async clockIn({ userId, date }: ClockInput) {
@@ -95,17 +96,22 @@ export class AttendanceService {
     startDate,
     endDate,
   }: AttendanceQuery) {
-    const start = new Date(`{startDate}T00:00:00Z`);
-    const end = new Date(`{endDate}T23:59:59Z`);
+    const start = new Date(`${startDate}T00:00:00Z`);
+    const end = new Date(`${endDate}T23:59:59Z`);
 
-    const attendance = await prisma.attendance.findMany({
-      where: {
-        userId: userId,
-        date: {
-          gte: start,
-          lte: end,
-        },
+    const where: any = {
+      date: {
+        gte: start,
+        lte: end,
       },
+    };
+
+    if (userId) {
+      where.userId = userId;
+    }
+
+    return await prisma.attendance.findMany({
+      where,
       orderBy: {
         date: "asc",
       },

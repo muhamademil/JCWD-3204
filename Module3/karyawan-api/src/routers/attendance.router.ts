@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { AttendanceController } from "../controllers/attendance.controller";
 
-export class attendanceRouter {
+export class AttendanceRouter {
   public router: Router;
   private attendanceController: AttendanceController;
 
@@ -13,15 +13,15 @@ export class attendanceRouter {
 
   private routes(): void {
     this.router.post(
-      "/attendance/clock_in",
+      "/attendances/clock_in",
       this.attendanceController.clockIn.bind(this.attendanceController)
     );
-    this.router.post(
-      "/attendance/clock_out",
+    this.router.put(
+      "/attendances/clock_out",
       this.attendanceController.clockOut.bind(this.attendanceController)
     );
     this.router.get(
-      "/attendance/monthly",
+      "/attendances/monthly",
       this.attendanceController.getMonthlyAttendance.bind(
         this.attendanceController
       )

@@ -52,10 +52,18 @@ export class AttendanceController {
   ): Promise<void> {
     try {
       const { userId, startDate, endDate } = req.query;
+
+      const now = new Date();
+      const defaultStart = new Date(now.getFullYear(), now.getMonth(), 1);
+      const defaultEnd = new Date(now.getFullYear(), now.getMonth(), 31);
+
       const result = await this.attendanceService.getMonthlyAttendance({
-        userId: Number(userId),
-        startDate: String(startDate),
-        endDate: String(endDate),
+        userId: userId ? parseInt(userId as string) : undefined,
+        startDate: (startDate
+          ? new Date(startDate as string)
+          : defaultStart
+        ).toString(),
+        endDate: endDate ? new Date(endDate as string) : defaultEnd,
       });
       res.status(200).json({
         data: result,
