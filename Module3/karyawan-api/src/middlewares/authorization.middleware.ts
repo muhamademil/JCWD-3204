@@ -1,12 +1,14 @@
 import { Request, Response, NextFunction } from "express";
-import { UserPayload } from "../models/interface";
 
 export class AuthorizationMiddleware {
-  static allowRoles(user: UserPayload): any {
-    return (req: Request, res: Response, next: NextFunction) => {
-      if (!(req as any).user || !user.role) {
-        return res.status(403).json({
-          message: "Forbidden : no role provided",
+  static allowRoles(allowedRole: String | String[]) {
+    return (req: Request, res: Response, next: NextFunction): void => {
+      const user = (req as any).user;
+      const roles = Array.isArray(allowedRole) ? allowedRole : [allowedRole];
+
+      if (!user || !roles.includes(user.role)) {
+        res.status(403).json({
+          message: "Forbidden : insufficient role",
         });
       }
       next();
