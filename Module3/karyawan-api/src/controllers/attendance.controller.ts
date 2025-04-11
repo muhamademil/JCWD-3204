@@ -58,12 +58,9 @@ export class AttendanceController {
       const defaultEnd = new Date(now.getFullYear(), now.getMonth(), 31);
 
       const result = await this.attendanceService.getMonthlyAttendance({
-        userId: userId ? parseInt(userId as string) : undefined,
-        startDate: (startDate
-          ? new Date(startDate as string)
-          : defaultStart
-        ).toString(),
-        endDate: endDate ? new Date(endDate as string) : defaultEnd,
+        userId: userId ? Number(userId) : undefined,
+        startDate: startDate ? String(startDate) : undefined,
+        endDate: endDate ? String(endDate) : undefined,
       });
       res.status(200).json({
         data: result,
