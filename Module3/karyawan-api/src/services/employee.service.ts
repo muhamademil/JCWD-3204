@@ -1,9 +1,10 @@
 import { prisma } from "../prisma/client";
 import { EmployeeInput, EmployeeQuery } from "../models/interface";
+import { userSchema } from "../lib/validation/validation.schema";
 
 export class EmployeeService {
-  async create(data: EmployeeInput) {
-    return prisma.user.create({ data });
+  public async create(data: EmployeeInput) {
+    return await prisma.user.create({ data });
   }
 
   async findAll(query: EmployeeQuery) {
