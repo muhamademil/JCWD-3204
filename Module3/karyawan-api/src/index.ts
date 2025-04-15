@@ -4,18 +4,25 @@ import { AttendanceRouter } from "./routers/attendance.router";
 import { AuthRouter } from "./routers/auth.router";
 import { EmailROuter } from "./routers/email.router";
 
+import cors from "cors";
+
 class Server {
   private app: Application;
   private port: number;
 
   constructor() {
     this.app = express();
-    this.port = 3000;
+    this.port = 8000;
     this.middlewares();
     this.routes();
   }
 
   private middlewares(): void {
+    this.app.use(
+      cors({
+        origin: "*",
+      })
+    );
     this.app.use(express.json());
   }
 
